@@ -466,3 +466,21 @@ aside li {
 .account-logout {
   display: inline-block;
 }
+.container{
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.header-arrow{
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: 0;
+}
+.customproduct-header{
+  align-items: center;
+  display: flex;
+}
+.textalign-center{
+  margin: 0 auto;
+}
