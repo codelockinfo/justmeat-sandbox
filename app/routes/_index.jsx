@@ -27,6 +27,53 @@ export default function Homepage() {
   const data = useLoaderData();
   return (
     <div className="home">
+      <div className='video-section'>
+        <video controls height="100%" width="100%">
+            <source src="https://cdn.shopify.com/videos/c/o/v/5b51c52b09564b59999aaa69b5ae90a7.mp4" type="video/mp4">
+            </source> 
+        </video>
+      </div>
+
+      <div className='image-section'> 
+        <a href="/products/custom-bundle-1">
+          <img src='https://cdn.shopify.com/s/files/1/0555/1751/1961/files/Desktop_Lemon_Pepper.jpg?v=1704755455'/>
+        </a>
+      </div>
+
+      <div className='imag-text-section displayflex'>
+        <div className='pig-bg-image'></div>
+        <div class="pig-text">
+          <h1>Elevate Your Plate</h1>
+          <a href="/products/custom-bundle-1">Order Now</a>
+          <p>No Artificial Colors / No Artificial Flavors / Grass-Fed & Grass-Finished Beef Premium Quality / Money-back Guarantee</p>
+        </div>
+      </div>
+
+      <div className='product-image-order-step-section'>
+        <div className='product-image-order-step-container'>
+          <div className="displayflex">
+            <div className='your-protein-routine-text'>
+                <h1 className='text-color-white'>Your Protein Routine</h1>
+                <p className='text-color-white'>The hardest part of meal prepping has never been easier! Simply order your meats, prepare for delivery, and reheat with the included directions. Plate up with your favorite sides a delicious and carefree meal.</p>
+                <a href="/products/custom-bundle-1"  className='btn-color-white'>Order Now</a>
+            </div>
+            <div className='your-protein-routine-img'>
+                <div className="displayflex">
+                  <div className='protein-img-width'>
+                    <img src="https://cdn.shopify.com/s/files/1/0555/1751/1961/files/Hannah_Zoomed.jpg?v=1702934270"/>
+                  </div>
+                  <div className='protein-img-width'>
+                    <img src="https://cdn.shopify.com/s/files/1/0555/1751/1961/files/Hannah_Tall2.jpg?v=1701447856"/>
+                  </div>
+                  <div className='protein-img-width'>
+                    <img src="https://cdn.shopify.com/s/files/1/0555/1751/1961/files/Hannah_Zoomed3.jpg?v=1702934278"/>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} />
     </div>
@@ -53,6 +100,7 @@ function FeaturedCollection({collection}) {
       )}
       <h1>{collection.title}</h1>
     </Link>
+    
   );
 }
 

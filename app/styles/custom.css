@@ -1,0 +1,69 @@
+
+.container{
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .header-arrow{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: 0;
+  }
+  .customproduct-header{
+    align-items: center;
+    display: flex;
+  }
+  .displayflex{
+    display: flex;
+  }
+  .textalign-center{  
+    margin: 0 auto;
+  }
+  img{
+    width:100%;
+  }
+  .pig-bg-image{
+    width: 35%;
+    background-image: url('https://cdn.shopify.com/s/files/1/0555/1751/1961/files/Group_4179_2x_c20de474-5eef-421d-a248-f3a6c09ae36a.png?v=1693277338');
+    background-attachment: local;
+    background-size: contain;
+    background-repeat: repeat-y;
+    min-height: 389px;
+    background-position: left bottom;
+    padding-top: 1px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .imag-text-section{
+    width: 100%;
+  }
+  .product-image-order-step-section {
+    width: 100%; /* Set width of container */
+    padding-bottom: 56px;
+    padding-top: 20px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0555/1751/1961/files/PNSER.png?v=1693273881'); /* Set background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+  }
+  .your-protein-routine-img{
+    width:65%;
+  }
+  .your-protein-routine-text{
+    width: 35%;
+    color: #fff;
+  }
+  .protein-img-width{
+    width: calc((100% - 0px) / 3);
+    padding: 0 15px;
+  }
+  .product-image-order-step-container{
+    padding: 0 15px;
+    width: 100%;
+    margin: auto;
+    max-width: 1400px;
+  }
+  .btn-color-white,.text-color-white{
+    color: #fff;
+  }
