@@ -1,4 +1,4 @@
-import {Await, NavLink} from '@remix-run/react';
+import {Await, NavLink, useLocation} from '@remix-run/react';
 import {Suspense} from 'react';
 import {useRootLoaderData} from '~/root';
 
@@ -6,20 +6,38 @@ import {useRootLoaderData} from '~/root';
  * @param {HeaderProps}
  */
 export function Header({header, isLoggedIn, cart}) {
+
+  const location = useLocation();
+  const isHeader = location?.pathname?.split("/").includes("products");
+  console.log( isHeader);
   const {shop, menu} = header;
-  return (
-    <header className="header">
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
-      </NavLink>
-      <HeaderMenu
-        menu={menu}
-        viewport="desktop"
-        primaryDomainUrl={header.shop.primaryDomain.url}
-      />
-      <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
-    </header>
-  );
+    return (
+      
+      <header className="header">
+      {
+          !isHeader ?  <><NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
+          <strong>{shop.name}</strong>
+          </NavLink>
+          <HeaderMenu
+          menu={menu}
+          viewport="desktop"
+          primaryDomainUrl={header.shop.primaryDomain.url}
+          />
+          <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /></> : 
+          <div className='customproduct-header textalign-center'>
+            <div className='header-arrow'>
+            <a href="/">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 m-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </a>
+            </div>
+            <strong>{shop.name}</strong>
+          </div>
+      }
+       
+      </header>
+    );
 }
 
 /**
