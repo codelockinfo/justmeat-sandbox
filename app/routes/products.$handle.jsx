@@ -107,6 +107,8 @@ export default function Product() {
   const {product, variants} = useLoaderData();
   const {selectedVariant} = product;
   return (
+    
+    <div className="container">
     <div className="product">
       <ProductImage image={selectedVariant?.image} />
       <ProductMain
@@ -114,6 +116,7 @@ export default function Product() {
         product={product}
         variants={variants}
       />
+    </div>
     </div>
   );
 }
@@ -303,7 +306,7 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
             type="hidden"
             value={JSON.stringify(analytics)}
           />
-          <button
+          <button className="btn--primary"
             type="submit"
             onClick={onClick}
             disabled={disabled ?? fetcher.state !== 'idle'}
