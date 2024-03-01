@@ -17,7 +17,7 @@ export async function loader({context}) {
   const {storefront} = context;
   const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
   const featuredCollection = collections.nodes[0];
-  const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
+    const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
 
   return defer({featuredCollection, recommendedProducts});
 }
@@ -25,12 +25,11 @@ export async function loader({context}) {
 export default function Homepage() {
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
-  return (
+    return (
     <div className="home">
       <div className='video-section'>
-        <video controls height="100%" width="100%">
-            <source src="https://cdn.shopify.com/videos/c/o/v/5b51c52b09564b59999aaa69b5ae90a7.mp4" type="video/mp4">
-            </source> 
+        <video autoplay muted playsinline loop controls height="100%" width="100%">
+          <source src="https://cdn.shopify.com/videos/c/o/v/5b51c52b09564b59999aaa69b5ae90a7.mp4" type="video/mp4"/>
         </video>
       </div>
 
@@ -50,7 +49,7 @@ export default function Homepage() {
       </div>
 
       <div className='product-image-order-step-section'>
-        <div className='product-image-order-step-container'>
+              <div className='product-image-order-step-container'>
           <div className="displayflex">
             <div className='your-protein-routine-text'>
                 <h1 className='text-color-white'>Your Protein Routine</h1>
@@ -99,7 +98,7 @@ function FeaturedCollection({collection}) {
         </div>
       )}
       <h1>{collection.title}</h1>
-    </Link>
+          </Link>
     
   );
 }
